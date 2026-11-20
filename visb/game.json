@@ -1,0 +1,443 @@
+{
+  "svg": "board.svg",
+  "definitions": [
+    { 
+      "name": "can_retreat",
+      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = TRUE & retreated = FALSE & ACTIVE(current_turn) : dom(field_position) & BENCH(current_turn) /\\ dom(field_position) /= {} & size(energy_map(ACTIVE(current_turn))) >= RETREAT_COST(field_position(ACTIVE(current_turn))))" 
+    },
+    { 
+      "name": "can_replace",
+      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = FALSE & ACTIVE(OPPONENT(current_turn)) /: dom(field_position) & BENCH(OPPONENT(current_turn)) /\\ dom(field_position) /= {})" 
+    }
+  ],
+  "items": [
+    {
+      "id": "txt_phase",
+      "attr": "text",
+      "value": "TO_STRING(phase)"
+    },
+    {
+      "id": "txt_turn",
+      "attr": "text",
+      "value": "TO_STRING(current_turn)"
+    },
+    {
+      "id": "txt_can_play",
+      "attr": "text",
+      "value": "IF can_play = TRUE THEN \"Pode jogar: True\" ELSE \"Pode jogar: False\" END"
+    },
+    {
+      "id": "txt_points_P1",
+      "attr": "text",
+      "value": "\"Pontos: \"^TO_STRING(points(P1))^\" / 3\""
+    },
+    {
+      "id": "txt_points_P2",
+      "attr": "text",
+      "value": "\"Pontos: \"^TO_STRING(points(P2))^\" / 3\""
+    },
+    {
+      "id": "txt_deck_P1",
+      "attr": "text",
+      "value": "\"Deck: \"^TO_STRING(size(player_deck(P1)))"
+    },
+    {
+      "id": "txt_deck_P2",
+      "attr": "text",
+      "value": "\"Deck: \"^TO_STRING(size(player_deck(P2)))"
+    },
+    {
+      "id": "txt_energy_played",
+      "attr": "text",
+      "value": "IF energy_played = TRUE THEN \"Energia jogada: True\" ELSE \"Energia jogada: False\" END"
+    },
+    {
+      "id": "txt_supporter_played",
+      "attr": "text",
+      "value": "IF supporter_played = TRUE THEN \"Apoiador jogado: True\" ELSE \"Apoiador jogado: False\" END"
+    },
+    {
+      "id": "txt_retreated",
+      "attr": "text",
+      "value": "IF retreated = TRUE THEN \"Recuou: True\" ELSE \"Recuou: False\" END"
+    },
+    {
+      "id": "btn_retreat",
+      "attr": "fill",
+      "value": "IF can_retreat = TRUE THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+    },
+    { 
+      "id": "text_retreat", 
+      "attr": "fill",
+      "value": "IF can_retreat = TRUE THEN \"#111827\" ELSE \"#6b7280\" END" 
+    },
+    {
+      "id": "btn_replace",
+      "attr": "fill",
+      "value": "IF can_replace = TRUE THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+    },
+    { 
+      "id": "text_replace_active", 
+      "attr": "fill",
+      "value": "IF can_replace = TRUE THEN \"#111827\" ELSE \"#6b7280\" END" 
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "slot_%0",
+      "attr": "fill",
+      "value": "IF %0 : dom(field_position) THEN (IF POKEMON_TYPE(field_position(%0)) = FIRE THEN \"#fca5a5\" ELSIF POKEMON_TYPE(field_position(%0)) = WATER THEN \"#93c5fd\" ELSIF POKEMON_TYPE(field_position(%0)) = GRASS THEN \"#86efac\" ELSIF POKEMON_TYPE(field_position(%0)) = ELECTRIC THEN \"#fde047\" ELSE \"#f3f4f6\" END) ELSE \"#9ca3af\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "poke_%0",
+      "attr": "text",
+      "value": "IF %0 : dom(field_position) THEN TO_STRING(field_position(%0)) ELSE \"Vazio\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "hp_%0",
+      "attr": "text",
+      "value": "IF %0 : dom(curr_health) THEN \"HP: \"^TO_STRING(curr_health(%0))^\"/\"^TO_STRING(MAX_HEALTH(field_position(%0))) ELSE \"HP: -\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "energy_%0",
+      "attr": "text",
+      "value": "\"Energias: \"^TO_STRING(size(energy_map(%0)))"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "e1_%0",
+      "attr": "fill",
+      "value": "IF size(energy_map(%0)) >= 1 THEN (IF energy_map(%0)(1) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(1) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(1) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(1) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "e2_%0",
+      "attr": "fill",
+      "value": "IF size(energy_map(%0)) >= 2 THEN (IF energy_map(%0)(2) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(2) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(2) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(2) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "e3_%0",
+      "attr": "fill",
+      "value": "IF size(energy_map(%0)) >= 3 THEN (IF energy_map(%0)(3) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(3) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(3) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(3) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "e4_%0",
+      "attr": "fill",
+      "value": "IF size(energy_map(%0)) >= 4 THEN (IF energy_map(%0)(4) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(4) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(4) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(4) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "e5_%0",
+      "attr": "fill",
+      "value": "IF size(energy_map(%0)) >= 5 THEN (IF energy_map(%0)(5) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(5) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(5) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(5) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_text_P1_%0",
+      "attr": "text",
+      "value": "IF %0 <= size(player_hand(P1)) THEN (IF player_hand(P1)(%0) = PROFESSOR_RESEARCH THEN \"PROF_RESEARCH\" ELSE TO_STRING(player_hand(P1)(%0)) END) ELSE \"-\" END"
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_P1_%0",
+      "attr": "fill",
+      "value": "IF %0 <= size(player_hand(P1)) THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_text_P2_%0",
+      "attr": "text",
+      "value": "IF %0 <= size(player_hand(P2)) THEN (IF player_hand(P2)(%0) = PROFESSOR_RESEARCH THEN \"PROF_RESEARCH\" ELSE TO_STRING(player_hand(P2)(%0)) END) ELSE \"-\" END"
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_P2_%0",
+      "attr": "fill",
+      "value": "IF %0 <= size(player_hand(P2)) THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+    }
+  ],
+  "events": [
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "slot_%0",
+      "event": "play_card",
+      "predicates": [
+        "ff = %0",
+        "TO_STRING(ii) = VISB_CLICK_META_INFOS'jsVars(\"SEL\")"
+      ]
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_P1_%0",
+      "event": "place_active",
+      "predicates": [
+        "pp = P1",
+        "ii = %0"
+      ]
+    },
+    {
+      "for": {
+        "from": 1,
+        "to": 7
+      },
+      "id": "hand_P2_%0",
+      "event": "place_active",
+      "predicates": [
+        "pp = P2",
+        "ii = %0"
+      ]
+    },
+    {
+      "for": {
+        "from": 1, 
+        "to": 4
+      },
+      "id": "btn_deck%0_p1",
+      "event": "set_deck",
+      "predicates": ["pp = P1", "dd = DECK%0"],
+      "items": [
+        {
+          "attr": "fill", 
+          "enabled": "\"#d1d5db\"", 
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_p1_d%0", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "for": {
+        "from": 1, 
+        "to": 4
+      },
+      "id": "btn_deck%0_p2",
+      "event": "set_deck",
+      "predicates": ["pp = P2", "dd = DECK%0"],
+      "items": [
+        {
+          "attr": "fill", 
+          "enabled": "\"#d1d5db\"", 
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_p2_d%0", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "id": "btn_shuffle",
+      "event": "shuffle_decks",
+      "items": [
+        {
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_shuffle", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "id": "btn_finish_setup",
+      "event": "finish_setup",
+      "items": [
+        {
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_finish_setup", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "id": "btn_attack",
+      "event": "attack",
+      "items": [
+        {
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_attack", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "id": "btn_retreat",
+      "event": "retreat",
+      "predicates": [
+        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
+      ]
+    },
+    {
+      "id": "btn_replace",
+      "event": "replace_active",
+      "predicates": [
+        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
+      ]
+    },
+    {
+      "id": "btn_end_turn",
+      "event": "end_turn",
+      "items": [
+        {
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_end_turn", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    },
+    {
+      "id": "btn_victory",
+      "event": "victory",
+      "items": [
+        {
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
+          "disabled": "\"#9ca3af\""
+        },
+        { 
+          "id": "text_victory", 
+          "attr": "fill", 
+          "enabled": "\"#111827\"", 
+          "disabled": "\"#6b7280\"" 
+        }
+      ]
+    }
+  ]
+}
