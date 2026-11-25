@@ -1,13 +1,13 @@
 {
   "svg": "board.svg",
   "definitions": [
-    { 
+    {
       "name": "can_retreat",
-      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = TRUE & retreated = FALSE & ACTIVE(current_turn) : dom(field_position) & BENCH(current_turn) /\\ dom(field_position) /= {} & size(energy_map(ACTIVE(current_turn))) >= RETREAT_COST(field_position(ACTIVE(current_turn))))" 
+      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = TRUE & retreated = FALSE & ACTIVE(current_turn) : dom(field_position) & BENCH(current_turn) /\\ dom(field_position) /= {} & size(energy_map(ACTIVE(current_turn))) >= RETREAT_COST(field_position(ACTIVE(current_turn))))"
     },
-    { 
+    {
       "name": "can_replace",
-      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = FALSE & ACTIVE(OPPONENT(current_turn)) /: dom(field_position) & BENCH(OPPONENT(current_turn)) /\\ dom(field_position) /= {})" 
+      "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = FALSE & ACTIVE(OPPONENT(current_turn)) /: dom(field_position) & BENCH(OPPONENT(current_turn)) /\\ dom(field_position) /= {})"
     }
   ],
   "items": [
@@ -66,20 +66,20 @@
       "attr": "fill",
       "value": "IF can_retreat = TRUE THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
     },
-    { 
-      "id": "text_retreat", 
+    {
+      "id": "text_retreat",
       "attr": "fill",
-      "value": "IF can_retreat = TRUE THEN \"#111827\" ELSE \"#6b7280\" END" 
+      "value": "IF can_retreat = TRUE THEN \"#111827\" ELSE \"#6b7280\" END"
     },
     {
       "id": "btn_replace",
       "attr": "fill",
       "value": "IF can_replace = TRUE THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
     },
-    { 
-      "id": "text_replace_active", 
+    {
+      "id": "text_replace_active",
       "attr": "fill",
-      "value": "IF can_replace = TRUE THEN \"#111827\" ELSE \"#6b7280\" END" 
+      "value": "IF can_replace = TRUE THEN \"#111827\" ELSE \"#6b7280\" END"
     },
     {
       "repeat": [
@@ -154,7 +154,7 @@
       ],
       "id": "e1_%0",
       "attr": "fill",
-      "value": "IF size(energy_map(%0)) >= 1 THEN (IF energy_map(%0)(1) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(1) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(1) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(1) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+      "value": "IF size(energy_map(%0)) >= 1 THEN (IF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 1) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 1) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 1) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 1) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
     },
     {
       "repeat": [
@@ -169,7 +169,7 @@
       ],
       "id": "e2_%0",
       "attr": "fill",
-      "value": "IF size(energy_map(%0)) >= 2 THEN (IF energy_map(%0)(2) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(2) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(2) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(2) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+      "value": "IF size(energy_map(%0)) >= 2 THEN (IF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 2) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 2) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 2) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 2) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
     },
     {
       "repeat": [
@@ -184,7 +184,7 @@
       ],
       "id": "e3_%0",
       "attr": "fill",
-      "value": "IF size(energy_map(%0)) >= 3 THEN (IF energy_map(%0)(3) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(3) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(3) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(3) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+      "value": "IF size(energy_map(%0)) >= 3 THEN (IF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 3) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 3) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 3) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 3) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
     },
     {
       "repeat": [
@@ -199,7 +199,7 @@
       ],
       "id": "e4_%0",
       "attr": "fill",
-      "value": "IF size(energy_map(%0)) >= 4 THEN (IF energy_map(%0)(4) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(4) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(4) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(4) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+      "value": "IF size(energy_map(%0)) >= 4 THEN (IF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 4) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 4) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 4) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 4) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
     },
     {
       "repeat": [
@@ -214,12 +214,12 @@
       ],
       "id": "e5_%0",
       "attr": "fill",
-      "value": "IF size(energy_map(%0)) >= 5 THEN (IF energy_map(%0)(5) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(5) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(5) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(5) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
+      "value": "IF size(energy_map(%0)) >= 5 THEN (IF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 5) = FIRE THEN \"#ef4444\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 5) = WATER THEN \"#3b82f6\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 5) = GRASS THEN \"#22c55e\" ELSIF energy_map(%0)(max({0, size(energy_map(%0)) - 5}) + 5) = ELECTRIC THEN \"#eab308\" ELSE \"#ffffff\" END) ELSE \"#6b7280\" END"
     },
     {
       "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_text_P1_%0",
       "attr": "text",
@@ -228,7 +228,7 @@
     {
       "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_P1_%0",
       "attr": "fill",
@@ -236,8 +236,26 @@
     },
     {
       "for": {
+        "from": 8,
+        "to": 28
+      },
+      "id": "hand_P1_%0",
+      "attr": "visibility",
+      "value": "IF %0 <= size(player_hand(P1)) THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "for": {
+        "from": 8,
+        "to": 28
+      },
+      "id": "hand_text_P1_%0",
+      "attr": "visibility",
+      "value": "IF %0 <= size(player_hand(P1)) THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_text_P2_%0",
       "attr": "text",
@@ -246,11 +264,29 @@
     {
       "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_P2_%0",
       "attr": "fill",
       "value": "IF %0 <= size(player_hand(P2)) THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+    },
+    {
+      "for": {
+        "from": 8,
+        "to": 28
+      },
+      "id": "hand_P2_%0",
+      "attr": "visibility",
+      "value": "IF %0 <= size(player_hand(P2)) THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "for": {
+        "from": 8,
+        "to": 28
+      },
+      "id": "hand_text_P2_%0",
+      "attr": "visibility",
+      "value": "IF %0 <= size(player_hand(P2)) THEN \"visible\" ELSE \"hidden\" END"
     }
   ],
   "events": [
@@ -275,30 +311,24 @@
     {
       "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_P1_%0",
       "event": "place_active",
-      "predicates": [
-        "pp = P1",
-        "ii = %0"
-      ]
+      "predicates": ["pp = P1", "ii = %0"]
     },
     {
       "for": {
         "from": 1,
-        "to": 7
+        "to": 28
       },
       "id": "hand_P2_%0",
       "event": "place_active",
-      "predicates": [
-        "pp = P2",
-        "ii = %0"
-      ]
+      "predicates": ["pp = P2", "ii = %0"]
     },
     {
       "for": {
-        "from": 1, 
+        "from": 1,
         "to": 4
       },
       "id": "btn_deck%0_p1",
@@ -306,21 +336,21 @@
       "predicates": ["pp = P1", "dd = DECK%0"],
       "items": [
         {
-          "attr": "fill", 
-          "enabled": "\"#d1d5db\"", 
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_p1_d%0", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_p1_d%0",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
     {
       "for": {
-        "from": 1, 
+        "from": 1,
         "to": 4
       },
       "id": "btn_deck%0_p2",
@@ -328,15 +358,15 @@
       "predicates": ["pp = P2", "dd = DECK%0"],
       "items": [
         {
-          "attr": "fill", 
-          "enabled": "\"#d1d5db\"", 
+          "attr": "fill",
+          "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_p2_d%0", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_p2_d%0",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
@@ -349,11 +379,11 @@
           "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_shuffle", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_shuffle",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
@@ -366,11 +396,11 @@
           "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_finish_setup", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_finish_setup",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
@@ -383,27 +413,23 @@
           "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_attack", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_attack",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
     {
       "id": "btn_retreat",
       "event": "retreat",
-      "predicates": [
-        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
-      ]
+      "predicates": ["TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"]
     },
     {
       "id": "btn_replace",
       "event": "replace_active",
-      "predicates": [
-        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
-      ]
+      "predicates": ["TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"]
     },
     {
       "id": "btn_end_turn",
@@ -414,11 +440,11 @@
           "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_end_turn", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_end_turn",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     },
@@ -431,11 +457,11 @@
           "enabled": "\"#d1d5db\"",
           "disabled": "\"#9ca3af\""
         },
-        { 
-          "id": "text_victory", 
-          "attr": "fill", 
-          "enabled": "\"#111827\"", 
-          "disabled": "\"#6b7280\"" 
+        {
+          "id": "text_victory",
+          "attr": "fill",
+          "enabled": "\"#111827\"",
+          "disabled": "\"#6b7280\""
         }
       ]
     }
