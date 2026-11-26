@@ -1,353 +1,551 @@
-<svg width="1200" height="1030" viewBox="0 0 1200 1030" id="svg22" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="1040" viewBox="0 0 1200 1040" id="svg22" xmlns="http://www.w3.org/2000/svg">
   <defs id="defs22" />
-  
-  
-  <rect id="bg_board" x="0" y="0" width="1200" height="1030" fill="#ffffff" />
-  
-  <line x1="220" y1="400" x2="960" y2="400" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8,6" id="line1" />
-  
-  
-  
-  <rect x="20" y="20" width="180" height="990" fill="#edeff3" id="rect1" />
-  
-  <text pointer-events="none" x="110" y="55" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937" id="text1">JOGADOR 2</text>
-  <text pointer-events="none" id="txt_points_P2" x="110" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Pontos: 0 / 3</text>
-  <text pointer-events="none" id="txt_deck_P2" x="110" y="110" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Deck: 0</text>
-  
-  <rect x="35" y="310" width="150" height="180" fill="#e5e7eb" id="rect2" />
-  <text pointer-events="none" x="110" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#4b5563" id="text2">FASE</text>
-  <text pointer-events="none" id="txt_phase" x="110" y="365" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#111827">SHUFFLING</text>
-  <text pointer-events="none" x="110" y="405" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#4b5563" id="text3">TURNO</text>
-  <text pointer-events="none" id="txt_turn" x="110" y="430" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#111827">P1</text>
-  <text pointer-events="none" id="txt_can_play" x="110" y="470" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#374151">Pode jogar:True</text>
-  
-  <text pointer-events="none" x="110" y="695" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937" id="text4">JOGADOR 1</text>
-  <text pointer-events="none" id="txt_points_P1" x="110" y="725" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Pontos: 0 / 3</text>
-  <text pointer-events="none" id="txt_deck_P1" x="110" y="750" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Deck: 0</text>
-  
-  
-  
-  
-  <g id="group_BENCH1_P2" onclick="onSlot(&#39;BENCH1_P2&#39;)">
-    <rect id="slot_BENCH1_P2" x="340" y="105" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="410" y="123" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text5">BENCH 1 (P2)</text>
-    <text pointer-events="none" id="poke_BENCH1_P2" x="410" y="147" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH1_P2" x="410" y="169" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH1_P2" x="410" y="191" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH1_P2" cx="378" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH1_P2" cx="394" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH1_P2" cx="410" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH1_P2" cx="426" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH1_P2" cx="442" cy="211" r="6" fill="#9ca3af" />
-  </g>
-  <g id="group_BENCH2_P2" onclick="onSlot(&#39;BENCH2_P2&#39;)">
-    <rect id="slot_BENCH2_P2" x="520" y="105" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="590" y="123" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text6">BENCH 2 (P2)</text>
-    <text pointer-events="none" id="poke_BENCH2_P2" x="590" y="147" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH2_P2" x="590" y="169" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH2_P2" x="590" y="191" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH2_P2" cx="558" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH2_P2" cx="574" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH2_P2" cx="590" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH2_P2" cx="606" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH2_P2" cx="622" cy="211" r="6" fill="#9ca3af" />
-  </g>
-  <g id="group_BENCH3_P2" onclick="onSlot(&#39;BENCH3_P2&#39;)">
-    <rect id="slot_BENCH3_P2" x="700" y="105" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="770" y="123" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text7">BENCH 3 (P2)</text>
-    <text pointer-events="none" id="poke_BENCH3_P2" x="770" y="147" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH3_P2" x="770" y="169" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH3_P2" x="770" y="191" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH3_P2" cx="738" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH3_P2" cx="754" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH3_P2" cx="770" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH3_P2" cx="786" cy="211" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH3_P2" cx="802" cy="211" r="6" fill="#9ca3af" />
-  </g>
-  
-  <g id="group_ACTIVE_P2" onclick="onSlot(&#39;ACTIVE_P2&#39;)">
-    <rect id="slot_ACTIVE_P2" x="510" y="245" width="160" height="140" fill="#d1d5db" />
-    <text pointer-events="none" x="590" y="265" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937" id="text8">ATIVO P2</text>
-    <text pointer-events="none" id="poke_ACTIVE_P2" x="590" y="293" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_ACTIVE_P2" x="590" y="317" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1f2937">HP: -</text>
-    <text pointer-events="none" id="energy_ACTIVE_P2" x="590" y="341" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Energias: 0</text>
-    <circle id="e1_ACTIVE_P2" cx="554" cy="364" r="6.5" fill="#6b7280" />
-    <circle id="e2_ACTIVE_P2" cx="572" cy="364" r="6.5" fill="#6b7280" />
-    <circle id="e3_ACTIVE_P2" cx="590" cy="364" r="6.5" fill="#6b7280" />
-    <circle id="e4_ACTIVE_P2" cx="608" cy="364" r="6.5" fill="#6b7280" />
-    <circle id="e5_ACTIVE_P2" cx="626" cy="364" r="6.5" fill="#6b7280" />
-  </g>
-  
-  <g id="group_ACTIVE_P1" onclick="onSlot(&#39;ACTIVE_P1&#39;)">
-    <rect id="slot_ACTIVE_P1" x="510" y="415" width="160" height="140" fill="#d1d5db" />
-    <text pointer-events="none" x="590" y="435" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937" id="text9">ATIVO P1</text>
-    <text pointer-events="none" id="poke_ACTIVE_P1" x="590" y="463" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_ACTIVE_P1" x="590" y="487" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1f2937">HP: -</text>
-    <text pointer-events="none" id="energy_ACTIVE_P1" x="590" y="511" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Energias: 0</text>
-    <circle id="e1_ACTIVE_P1" cx="554" cy="534" r="6.5" fill="#6b7280" />
-    <circle id="e2_ACTIVE_P1" cx="572" cy="534" r="6.5" fill="#6b7280" />
-    <circle id="e3_ACTIVE_P1" cx="590" cy="534" r="6.5" fill="#6b7280" />
-    <circle id="e4_ACTIVE_P1" cx="608" cy="534" r="6.5" fill="#6b7280" />
-    <circle id="e5_ACTIVE_P1" cx="626" cy="534" r="6.5" fill="#6b7280" />
-  </g>
-  
-  <g id="group_BENCH1_P1" onclick="onSlot(&#39;BENCH1_P1&#39;)">
-    <rect id="slot_BENCH1_P1" x="340" y="570" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="410" y="588" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text10">BENCH 1 (P1)</text>
-    <text pointer-events="none" id="poke_BENCH1_P1" x="410" y="612" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH1_P1" x="410" y="634" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH1_P1" x="410" y="656" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH1_P1" cx="378" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH1_P1" cx="394" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH1_P1" cx="410" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH1_P1" cx="426" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH1_P1" cx="442" cy="676" r="6" fill="#9ca3af" />
-  </g>
-  <g id="group_BENCH2_P1" onclick="onSlot(&#39;BENCH2_P1&#39;)">
-    <rect id="slot_BENCH2_P1" x="520" y="570" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="590" y="588" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text11">BENCH 2 (P1)</text>
-    <text pointer-events="none" id="poke_BENCH2_P1" x="590" y="612" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH2_P1" x="590" y="634" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH2_P1" x="590" y="656" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH2_P1" cx="558" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH2_P1" cx="574" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH2_P1" cx="590" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH2_P1" cx="606" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH2_P1" cx="622" cy="676" r="6" fill="#9ca3af" />
-  </g>
-  <g id="group_BENCH3_P1" onclick="onSlot(&#39;BENCH3_P1&#39;)">
-    <rect id="slot_BENCH3_P1" x="700" y="570" width="140" height="125" fill="#d1d5db" />
-    <text pointer-events="none" x="770" y="588" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4b5563" id="text12">BENCH 3 (P1)</text>
-    <text pointer-events="none" id="poke_BENCH3_P1" x="770" y="612" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827">Vazio</text>
-    <text pointer-events="none" id="hp_BENCH3_P1" x="770" y="634" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">HP: -</text>
-    <text pointer-events="none" id="energy_BENCH3_P1" x="770" y="656" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4b5563">Energias: 0</text>
-    <circle id="e1_BENCH3_P1" cx="738" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e2_BENCH3_P1" cx="754" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e3_BENCH3_P1" cx="770" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e4_BENCH3_P1" cx="786" cy="676" r="6" fill="#9ca3af" />
-    <circle id="e5_BENCH3_P1" cx="802" cy="676" r="6" fill="#9ca3af" />
-  </g>
-  
-  
-  
-<line x1="220" y1="795" x2="960" y2="795" stroke="#d1d5db" stroke-width="1" />
-  <text pointer-events="none" x="402" y="813" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#4b5563">MÃO EXTRA P1 (8–28)</text>
-  <line x1="590" y1="800" x2="590" y2="1030" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,4" />
-  <text pointer-events="none" x="778" y="813" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#4b5563">MÃO EXTRA P2 (8–28)</text>
 
-  <g
-     id="group_hand_P2"
-     onclick="onHand(event)">
-    <rect id="hand_P2_1" x="235" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_1" x="282" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_2" x="340" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_2" x="387" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_3" x="445" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_3" x="492" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_4" x="550" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_4" x="597" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_5" x="655" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_5" x="702" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_6" x="760" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_6" x="807" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P2_7" x="865" y="20" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P2_7" x="912" y="57" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
+  <rect id="bg_board" x="0" y="0" width="1200" height="1040" fill="#ffffff" />
+  <line x1="220" y1="518" x2="960" y2="518" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8,6" id="line1" />
 
-    <rect id="hand_P2_8" x="602" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_8" x="658" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_9" x="722" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_9" x="778" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_10" x="842" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_10" x="898" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <!-- PAINEL LATERAL ESQUERDO: JOGADORES, FASE E TURNO -->
+  <rect x="20" y="20" width="180" height="1000" fill="#edeff3" id="rect1" />
 
-    <rect id="hand_P2_11" x="602" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_11" x="658" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_12" x="722" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_12" x="778" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_13" x="842" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_13" x="898" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <text pointer-events="none" x="110" y="142" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937" id="text1">JOGADOR 2</text>
+  <text pointer-events="none" id="txt_points_P2" x="110" y="170" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Pontos: 0 / 3</text>
+  <text pointer-events="none" id="txt_deck_P2" x="110" y="195" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Deck: 0</text>
 
-    <rect id="hand_P2_14" x="602" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_14" x="658" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_15" x="722" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_15" x="778" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_16" x="842" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_16" x="898" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <!-- Caixa de Fase e Turno (sem background adicional e sem seção Status da Partida) -->
+  <rect x="30" y="440" width="160" height="155" fill="none" stroke="#cbd5e1" stroke-width="1" id="rect2" />
+  <text pointer-events="none" x="110" y="464" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4b5563" id="text2">FASE</text>
+  <text pointer-events="none" id="txt_phase" x="110" y="486" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#111827">SHUFFLING</text>
+  <text pointer-events="none" x="110" y="518" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4b5563" id="text3">TURNO</text>
+  <text pointer-events="none" id="txt_turn" x="110" y="542" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#111827">P1</text>
+  <text pointer-events="none" id="txt_can_play" x="110" y="572" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Pode jogar: True</text>
+  <text pointer-events="none" id="txt_game_status" x="110" y="572" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" visibility="hidden">Partida em andamento</text>
 
-    <rect id="hand_P2_17" x="602" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_17" x="658" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_18" x="722" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_18" x="778" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_19" x="842" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_19" x="898" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <text pointer-events="none" x="110" y="852" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937" id="text4">JOGADOR 1</text>
+  <text pointer-events="none" id="txt_points_P1" x="110" y="880" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Pontos: 0 / 3</text>
+  <text pointer-events="none" id="txt_deck_P1" x="110" y="905" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">Deck: 0</text>
 
-    <rect id="hand_P2_20" x="602" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_20" x="658" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_21" x="722" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_21" x="778" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_22" x="842" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_22" x="898" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <!-- ÁREA SUPERIOR PARA MÃO EXTRA P2 (8–28) E MÃO PRINCIPAL P2 (1–7) -->
+  <text pointer-events="none" x="590" y="26" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#4b5563">MÃO EXTRA P2 (8–28)</text>
+  <line x1="220" y1="122" x2="960" y2="122" stroke="#d1d5db" stroke-width="1" />
 
-    <rect id="hand_P2_23" x="602" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_23" x="658" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_24" x="722" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_24" x="778" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_25" x="842" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_25" x="898" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P2_26" x="602" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_26" x="658" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_27" x="722" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_27" x="778" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P2_28" x="842" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P2_28" x="898" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <g id="group_hand_P2" onclick="onHand(event)">
+    <rect id="hand_P2_1" x="235" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_1" x="282.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_2" x="340" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_2" x="387.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_3" x="445" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_3" x="492.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_4" x="550" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_4" x="597.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_5" x="655" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_5" x="702.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_6" x="760" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_6" x="807.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_7" x="865" y="130" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P2_7" x="912.5" y="164" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P2_8" x="235" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_8" x="282.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_9" x="340" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_9" x="387.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_10" x="445" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_10" x="492.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_11" x="550" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_11" x="597.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_12" x="655" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_12" x="702.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_13" x="760" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_13" x="807.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_14" x="865" y="34" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_14" x="912.5" y="49" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_15" x="235" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_15" x="282.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_16" x="340" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_16" x="387.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_17" x="445" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_17" x="492.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_18" x="550" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_18" x="597.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_19" x="655" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_19" x="702.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_20" x="760" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_20" x="807.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_21" x="865" y="62" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_21" x="912.5" y="77" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_22" x="235" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_22" x="282.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_23" x="340" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_23" x="387.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_24" x="445" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_24" x="492.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_25" x="550" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_25" x="597.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_26" x="655" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_26" x="702.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_27" x="760" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_27" x="807.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P2_28" x="865" y="90" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P2_28" x="912.5" y="105" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
   </g>
 
-  <g
-     id="group_hand_P1"
-     onclick="onHand(event)">
-    <rect id="hand_P1_1" x="235" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_1" x="282" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_2" x="340" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_2" x="387" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_3" x="445" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_3" x="492" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_4" x="550" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_4" x="597" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_5" x="655" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_5" x="702" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_6" x="760" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_6" x="807" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-    <rect id="hand_P1_7" x="865" y="715" width="95" height="65" fill="#d1d5db" />
-    <text pointer-events="none" id="hand_text_P1_7" x="912" y="752" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#111827">-</text>
-
-    <rect id="hand_P1_8" x="226" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_8" x="282" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_9" x="346" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_9" x="402" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_10" x="466" y="822" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_10" x="522" y="837" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_11" x="226" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_11" x="282" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_12" x="346" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_12" x="402" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_13" x="466" y="852" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_13" x="522" y="867" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_14" x="226" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_14" x="282" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_15" x="346" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_15" x="402" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_16" x="466" y="882" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_16" x="522" y="897" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_17" x="226" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_17" x="282" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_18" x="346" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_18" x="402" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_19" x="466" y="912" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_19" x="522" y="927" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_20" x="226" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_20" x="282" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_21" x="346" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_21" x="402" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_22" x="466" y="942" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_22" x="522" y="957" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_23" x="226" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_23" x="282" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_24" x="346" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_24" x="402" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_25" x="466" y="972" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_25" x="522" y="987" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-
-    <rect id="hand_P1_26" x="226" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_26" x="282" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_27" x="346" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_27" x="402" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
-    <rect id="hand_P1_28" x="466" y="1002" width="112" height="24" fill="#d1d5db" stroke="#6b7280" stroke-width="1" visibility="hidden" />
-    <text pointer-events="none" id="hand_text_P1_28" x="522" y="1017" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  <!-- SLOTS DO CAMPO (P2 TOPO, P1 BASE) -->
+  <g id="group_BENCH1_P2" onclick="onSlot('BENCH1_P2')">
+    <rect id="slot_BENCH1_P2" x="330" y="202" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH1_P2" x="334" y="206" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="405" y="218" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 1 (P2)</text>
+    <rect id="new_badge_BENCH1_P2" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH1_P2" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH1_P2" x="405" y="241" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH1_P2" x="405" y="262" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH1_P2" x="405" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH1_P2" x="405" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH1_P2" x="405" y="303" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH1_P2" cx="373" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH1_P2" cx="389" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH1_P2" cx="405" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH1_P2" cx="421" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH1_P2" cx="437" cy="327" r="5.5" fill="#9ca3af" />
   </g>
-  
-  <rect x="980" y="20" width="200" height="990" fill="#edeff3" id="rect12" />
+  <g id="group_BENCH2_P2" onclick="onSlot('BENCH2_P2')">
+    <rect id="slot_BENCH2_P2" x="515" y="202" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH2_P2" x="519" y="206" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="590" y="218" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 2 (P2)</text>
+    <rect id="new_badge_BENCH2_P2" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH2_P2" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH2_P2" x="590" y="241" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH2_P2" x="590" y="262" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH2_P2" x="590" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH2_P2" x="590" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH2_P2" x="590" y="303" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH2_P2" cx="558" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH2_P2" cx="574" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH2_P2" cx="590" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH2_P2" cx="606" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH2_P2" cx="622" cy="327" r="5.5" fill="#9ca3af" />
+  </g>
+  <g id="group_BENCH3_P2" onclick="onSlot('BENCH3_P2')">
+    <rect id="slot_BENCH3_P2" x="700" y="202" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH3_P2" x="704" y="206" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="775" y="218" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 3 (P2)</text>
+    <rect id="new_badge_BENCH3_P2" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH3_P2" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH3_P2" x="775" y="241" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH3_P2" x="775" y="262" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH3_P2" x="775" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH3_P2" x="775" y="282" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH3_P2" x="775" y="303" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH3_P2" cx="743" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH3_P2" cx="759" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH3_P2" cx="775" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH3_P2" cx="791" cy="327" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH3_P2" cx="807" cy="327" r="5.5" fill="#9ca3af" />
+  </g>
+
+  <g id="group_ACTIVE_P2" onclick="onSlot('ACTIVE_P2')">
+    <rect id="slot_ACTIVE_P2" x="502" y="360" width="176" height="150" fill="#d1d5db" />
+    <rect id="new_border_ACTIVE_P2" x="506" y="364" width="168" height="142" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="590" y="376" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937">ATIVO P2</text>
+    <rect id="new_badge_ACTIVE_P2" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_ACTIVE_P2" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_ACTIVE_P2" x="590" y="400" text-anchor="middle" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_ACTIVE_P2" x="590" y="422" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_ACTIVE_P2" x="590" y="443" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_ACTIVE_P2" x="590" y="443" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_ACTIVE_P2" x="590" y="464" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Energias: 0</text>
+    <circle id="e1_ACTIVE_P2" cx="554" cy="488" r="6" fill="#6b7280" />
+    <circle id="e2_ACTIVE_P2" cx="572" cy="488" r="6" fill="#6b7280" />
+    <circle id="e3_ACTIVE_P2" cx="590" cy="488" r="6" fill="#6b7280" />
+    <circle id="e4_ACTIVE_P2" cx="608" cy="488" r="6" fill="#6b7280" />
+    <circle id="e5_ACTIVE_P2" cx="626" cy="488" r="6" fill="#6b7280" />
+  </g>
+
+  <g id="group_ACTIVE_P1" onclick="onSlot('ACTIVE_P1')">
+    <rect id="slot_ACTIVE_P1" x="502" y="526" width="176" height="150" fill="#d1d5db" />
+    <rect id="new_border_ACTIVE_P1" x="506" y="530" width="168" height="142" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="590" y="542" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937">ATIVO P1</text>
+    <rect id="new_badge_ACTIVE_P1" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_ACTIVE_P1" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_ACTIVE_P1" x="590" y="566" text-anchor="middle" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_ACTIVE_P1" x="590" y="588" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_ACTIVE_P1" x="590" y="609" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_ACTIVE_P1" x="590" y="609" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_ACTIVE_P1" x="590" y="630" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Energias: 0</text>
+    <circle id="e1_ACTIVE_P1" cx="554" cy="654" r="6" fill="#6b7280" />
+    <circle id="e2_ACTIVE_P1" cx="572" cy="654" r="6" fill="#6b7280" />
+    <circle id="e3_ACTIVE_P1" cx="590" cy="654" r="6" fill="#6b7280" />
+    <circle id="e4_ACTIVE_P1" cx="608" cy="654" r="6" fill="#6b7280" />
+    <circle id="e5_ACTIVE_P1" cx="626" cy="654" r="6" fill="#6b7280" />
+  </g>
+
+  <g id="group_BENCH1_P1" onclick="onSlot('BENCH1_P1')">
+    <rect id="slot_BENCH1_P1" x="330" y="686" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH1_P1" x="334" y="690" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="405" y="702" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 1 (P1)</text>
+    <rect id="new_badge_BENCH1_P1" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH1_P1" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH1_P1" x="405" y="725" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH1_P1" x="405" y="746" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH1_P1" x="405" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH1_P1" x="405" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH1_P1" x="405" y="787" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH1_P1" cx="373" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH1_P1" cx="389" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH1_P1" cx="405" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH1_P1" cx="421" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH1_P1" cx="437" cy="811" r="5.5" fill="#9ca3af" />
+  </g>
+  <g id="group_BENCH2_P1" onclick="onSlot('BENCH2_P1')">
+    <rect id="slot_BENCH2_P1" x="515" y="686" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH2_P1" x="519" y="690" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="590" y="702" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 2 (P1)</text>
+    <rect id="new_badge_BENCH2_P1" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH2_P1" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH2_P1" x="590" y="725" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH2_P1" x="590" y="746" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH2_P1" x="590" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH2_P1" x="590" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH2_P1" x="590" y="787" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH2_P1" cx="558" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH2_P1" cx="574" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH2_P1" cx="590" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH2_P1" cx="606" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH2_P1" cx="622" cy="811" r="5.5" fill="#9ca3af" />
+  </g>
+  <g id="group_BENCH3_P1" onclick="onSlot('BENCH3_P1')">
+    <rect id="slot_BENCH3_P1" x="700" y="686" width="150" height="148" fill="#d1d5db" />
+    <rect id="new_border_BENCH3_P1" x="704" y="690" width="142" height="140" fill="none" stroke="#7f1d1d" stroke-width="1.5" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" x="775" y="702" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#4b5563">BENCH 3 (P1)</text>
+    <rect id="new_badge_BENCH3_P1" x="0" y="0" width="0" height="0" fill="none" display="none" opacity="0" visibility="hidden" pointer-events="none" />
+    <text pointer-events="none" id="new_text_BENCH3_P1" x="0" y="0" display="none" opacity="0" visibility="hidden"></text>
+    <text pointer-events="none" id="poke_BENCH3_P1" x="775" y="725" text-anchor="middle" font-family="sans-serif" font-size="12.5" font-weight="bold" fill="#111827">Vazio</text>
+    <text pointer-events="none" id="hp_BENCH3_P1" x="775" y="746" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1f2937">HP: -</text>
+    <text pointer-events="none" id="stats_BENCH3_P1" x="775" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#1f2937">Dano: - | Atq: - | Rec: -</text>
+    <text pointer-events="none" id="weak_BENCH3_P1" x="775" y="766" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151" visibility="hidden">Fraq: -</text>
+    <text pointer-events="none" id="energy_BENCH3_P1" x="775" y="787" text-anchor="middle" font-family="sans-serif" font-size="9.8" fill="#374151">Energias: 0</text>
+    <circle id="e1_BENCH3_P1" cx="743" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e2_BENCH3_P1" cx="759" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e3_BENCH3_P1" cx="775" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e4_BENCH3_P1" cx="791" cy="811" r="5.5" fill="#9ca3af" />
+    <circle id="e5_BENCH3_P1" cx="807" cy="811" r="5.5" fill="#9ca3af" />
+  </g>
+
+  <!-- ÁREA INFERIOR PARA MÃO PRINCIPAL P1 (1–7) E MÃO EXTRA P1 (8–28) -->
+  <g id="group_hand_P1" onclick="onHand(event)">
+    <rect id="hand_P1_1" x="235" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_1" x="282.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_2" x="340" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_2" x="387.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_3" x="445" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_3" x="492.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_4" x="550" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_4" x="597.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_5" x="655" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_5" x="702.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_6" x="760" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_6" x="807.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_7" x="865" y="846" width="95" height="60" fill="#e5e7eb" style="fill: #e5e7eb;" />
+    <text pointer-events="none" id="hand_text_P1_7" x="912.5" y="880" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#111827">-</text>
+    <rect id="hand_P1_8" x="235" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_8" x="282.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_9" x="340" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_9" x="387.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_10" x="445" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_10" x="492.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_11" x="550" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_11" x="597.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_12" x="655" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_12" x="702.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_13" x="760" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_13" x="807.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_14" x="865" y="938" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_14" x="912.5" y="953" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_15" x="235" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_15" x="282.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_16" x="340" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_16" x="387.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_17" x="445" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_17" x="492.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_18" x="550" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_18" x="597.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_19" x="655" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_19" x="702.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_20" x="760" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_20" x="807.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_21" x="865" y="966" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_21" x="912.5" y="981" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_22" x="235" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_22" x="282.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_23" x="340" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_23" x="387.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_24" x="445" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_24" x="492.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_25" x="550" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_25" x="597.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_26" x="655" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_26" x="702.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_27" x="760" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_27" x="807.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+    <rect id="hand_P1_28" x="865" y="994" width="95" height="24" fill="#e5e7eb" style="fill: #e5e7eb;" stroke="#6b7280" stroke-width="1" visibility="hidden" />
+    <text pointer-events="none" id="hand_text_P1_28" x="912.5" y="1009" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#111827" visibility="hidden">-</text>
+  </g>
+
+  <line x1="220" y1="914" x2="960" y2="914" stroke="#d1d5db" stroke-width="1" />
+  <text pointer-events="none" x="590" y="930" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#4b5563">MÃO EXTRA P1 (8–28)</text>
+
+  <!-- TELA DE VITÓRIA SIMPLES (sem bordas arredondadas, fundo cinza, texto preto) -->
+  <rect id="banner_game_over" x="270" y="463" width="640" height="110" fill="#d1d5db" stroke="#6b7280" stroke-width="2" visibility="hidden" pointer-events="none" />
+  <text pointer-events="none" id="txt_game_over_title" x="590" y="508" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#000000" visibility="hidden">PARTIDA ENCERRADA!</text>
+  <text pointer-events="none" id="txt_game_over_winner" x="590" y="544" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000000" visibility="hidden">Vencedor: P1</text>
+
+  <!-- PAINEL LATERAL DIREITO: AÇÕES E FLAGS DE TURNO -->
+  <rect x="980" y="20" width="200" height="1000" fill="#edeff3" id="rect12" />
   <text pointer-events="none" x="1080" y="55" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1f2937" id="text13">AÇÕES</text>
-  
-  <text x="1080" y="72" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#1f2937" id="text_deck_p1">Deck P1</text>
+
+  <text x="1080" y="72" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937" id="text_deck_p1">Deck P1</text>
   <rect id="btn_deck1_p1" x="1000" y="78" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1017.75" y="103" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d1">D1</text>
+  <text x="1017.75" y="103" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d1">D1</text>
   <rect id="btn_deck2_p1" x="1041.5" y="78" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1059.25" y="103" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d2">D2</text>
+  <text x="1059.25" y="103" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d2">D2</text>
   <rect id="btn_deck3_p1" x="1083" y="78" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1100.75" y="103" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d3">D3</text>
+  <text x="1100.75" y="103" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d3">D3</text>
   <rect id="btn_deck4_p1" x="1124.5" y="78" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1142.25" y="103" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d4">D4</text>
-  
-  <text x="1080" y="133" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#1f2937" id="text_deck_p2">Deck P2</text>
+  <text x="1142.25" y="103" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p1_d4">D4</text>
+
+  <text x="1080" y="133" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1f2937" id="text_deck_p2">Deck P2</text>
   <rect id="btn_deck1_p2" x="1000" y="139" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1017.75" y="164" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d1">D1</text>
+  <text x="1017.75" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d1">D1</text>
   <rect id="btn_deck2_p2" x="1041.5" y="139" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1059.25" y="164" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d2">D2</text>
+  <text x="1059.25" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d2">D2</text>
   <rect id="btn_deck3_p2" x="1083" y="139" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1100.75" y="164" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d3">D3</text>
+  <text x="1100.75" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d3">D3</text>
   <rect id="btn_deck4_p2" x="1124.5" y="139" width="35.5" height="40" fill="#9ca3af" />
-  <text x="1142.25" y="164" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d4">D4</text>
+  <text x="1142.25" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#111827" pointer-events="none" id="text_p2_d4">D4</text>
+
   <rect id="btn_shuffle" x="1000" y="190" width="160" height="40" fill="#9ca3af" />
   <text x="1080" y="215" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#111827" pointer-events="none" id="text_shuffle">Embaralhar Decks</text>
   <rect id="btn_finish_setup" x="1000" y="245" width="160" height="40" fill="#9ca3af" />
   <text x="1080" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#111827" pointer-events="none" id="text_finish_setup">Iniciar Partida</text>
-  <line x1="1000" y1="310" x2="1160" y2="310" id="line17" />
-  
-  <rect id="btn_attack" x="1000" y="335" width="160" height="45" fill="#9ca3af" />
+  <line x1="1000" y1="310" x2="1160" y2="310" stroke="#cbd5e1" stroke-width="1" id="line17" />
+
+  <rect id="btn_attack" x="1000" y="335" width="160" height="45" fill="#9ca3af" onclick="onActionClear()" />
   <text x="1080" y="363" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#000000" pointer-events="none" id="text_attack">Atacar</text>
-  <rect id="btn_retreat" x="1000" y="395" width="160" height="45" fill="#9ca3af" />
-  <text x="1080" y="423" text-anchor="middle" font-family="sans-serif" font-size="13px" font-weight="bold" fill="#111827" pointer-events="none" id="text_retreat">Recuar</text>
-  <rect id="btn_replace" x="1000" y="455" width="160" height="45" fill="#9ca3af" />
+  <rect id="btn_retreat" x="1000" y="395" width="160" height="45" fill="#9ca3af" onclick="onActionConsumeTarget()" />
+  <text x="1080" y="423" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#111827" pointer-events="none" id="text_retreat">Recuar</text>
+  <rect id="btn_replace" x="1000" y="455" width="160" height="45" fill="#9ca3af" onclick="onActionConsumeTarget()" />
   <text x="1080" y="483" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#111827" pointer-events="none" id="text_replace_active">Substituir Ativo</text>
-  <rect id="btn_end_turn" x="1000" y="515" width="160" height="45" fill="#9ca3af" />
+  <rect id="btn_end_turn" x="1000" y="515" width="160" height="45" fill="#9ca3af" onclick="onActionClear()" />
   <text x="1080" y="543" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#000000" pointer-events="none" id="text_end_turn">Passar Turno</text>
-  <line x1="1000" y1="585" x2="1160" y2="585" id="line21" />
-  
-  <rect id="btn_victory" x="1000" y="610" width="160" height="45" fill="#9ca3af" />
+  <line x1="1000" y1="585" x2="1160" y2="585" stroke="#cbd5e1" stroke-width="1" id="line21" />
+
+  <rect id="btn_victory" x="1000" y="610" width="160" height="45" fill="#9ca3af" onclick="onActionClear()" />
   <text x="1080" y="638" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#000000" pointer-events="none" id="text_victory">Declarar Vitória</text>
-  
-  <text pointer-events="none" id="txt_energy_played" x="1080" y="700" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#374151"><tspan id="tspan23" x="1080" y="700">Energia jogada:False</tspan></text>
-  <text pointer-events="none" id="txt_supporter_played" x="1080" y="725" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#374151">Apoiador jogado:False</text>
-  <text pointer-events="none" id="txt_retreated" x="1080" y="750" text-anchor="middle" font-family="sans-serif" font-size="12px" fill="#374151">Recuou:False</text>
-  <script type="text/javascript" id="script1">
+
+  <text pointer-events="none" id="txt_energy_played" x="1080" y="700" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Energia jogada: False</text>
+  <text pointer-events="none" id="txt_supporter_played" x="1080" y="725" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Apoiador jogado: False</text>
+  <text pointer-events="none" id="txt_retreated" x="1080" y="750" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Recuou: False</text>
+
+  <script type="text/javascript" id="script1"><![CDATA[
     var V = (typeof visb_vars !== "undefined") ? visb_vars : (window.visb_vars = {});
     if (V["SEL"] === undefined) V["SEL"] = "0";
     if (V["TARGET"] === undefined) V["TARGET"] = "NONE";
-    var selHand = null, selSlot = null;
-    function paint(id, color, w) {
+
+    var selHand = null;
+    var selSlot = null;
+
+    var ALL_SLOTS = [
+      "ACTIVE_P1", "BENCH1_P1", "BENCH2_P1", "BENCH3_P1",
+      "ACTIVE_P2", "BENCH1_P2", "BENCH2_P2", "BENCH3_P2"
+    ];
+
+    var BASICS = {
+      CHARMANDER: true, SQUIRTLE: true, BULBASAUR: true,
+      PIKACHU: true, SNORLAX: true, EEVEE: true
+    };
+
+    var PRE_EVOLUTION = {
+      CHARMELEON: "CHARMANDER",
+      CHARIZARD: "CHARMELEON",
+      WARTORTLE: "SQUIRTLE",
+      BLASTOISE: "WARTORTLE",
+      IVYSAUR: "BULBASAUR",
+      VENUSAUR: "IVYSAUR",
+      RAICHU: "PIKACHU",
+      VAPOREON: "EEVEE",
+      FLAREON: "EEVEE",
+      JOLTEON: "EEVEE"
+    };
+
+    function getText(id) {
       var e = document.getElementById(id);
-      if (e) { e.setAttribute("stroke", color); e.setAttribute("stroke-width", w); }
+      return e ? (e.textContent || "").trim() : "";
     }
+
+    function paint(id, color, w, dash) {
+      var e = document.getElementById(id);
+      if (!e) return;
+      e.setAttribute("stroke", color);
+      e.setAttribute("stroke-width", w);
+      if (dash) {
+        e.setAttribute("stroke-dasharray", dash);
+      } else {
+        e.removeAttribute("stroke-dasharray");
+      }
+    }
+
+    function clearHandHighlight() {
+      if (selHand) {
+        var prevIdx = parseInt(selHand.split("_")[2], 10);
+        paint(selHand, prevIdx >= 8 ? "#6b7280" : "none", prevIdx >= 8 ? "1" : "0", null);
+        selHand = null;
+      }
+    }
+
+    function clearSlotHighlights() {
+      for (var i = 0; i < ALL_SLOTS.length; i++) {
+        var s = ALL_SLOTS[i];
+        paint("slot_" + s, "none", "0", null);
+      }
+      selSlot = null;
+    }
+
+    function restoreTargetHighlight() {
+      if (V["TARGET"] && V["TARGET"] !== "NONE") {
+        selSlot = "slot_" + V["TARGET"];
+        paint(selSlot, "#2563eb", "3", null);
+      }
+    }
+
+    function highlightValidSlotsForCard(cardName, player) {
+      clearSlotHighlights();
+      var phase = getText("txt_phase");
+      var turn = getText("txt_turn") || player;
+
+      if (phase === "PLACING_ACTIVE") {
+        var actSlot = "ACTIVE_" + player;
+        paint("slot_" + actSlot, "#16a34a", "3", "6,3");
+        return;
+      }
+
+      if (player !== turn) {
+        restoreTargetHighlight();
+        return;
+      }
+
+      var playerSlots = ["ACTIVE_" + turn, "BENCH1_" + turn, "BENCH2_" + turn, "BENCH3_" + turn];
+      var benchSlots = ["BENCH1_" + turn, "BENCH2_" + turn, "BENCH3_" + turn];
+
+      if (cardName === "PROF_RESEARCH" || cardName === "PROFESSOR_RESEARCH") {
+        paint("slot_ACTIVE_" + turn, "#16a34a", "3.5", "6,3");
+      } else if (cardName.indexOf("_ENERGY") !== -1) {
+        for (var i = 0; i < playerSlots.length; i++) {
+          if (getText("poke_" + playerSlots[i]) !== "Vazio") {
+            paint("slot_" + playerSlots[i], "#16a34a", "3", "6,3");
+          }
+        }
+      } else if (cardName === "POTION") {
+        for (var j = 0; j < playerSlots.length; j++) {
+          if (getText("poke_" + playerSlots[j]) !== "Vazio") {
+            paint("slot_" + playerSlots[j], "#16a34a", "3", "6,3");
+          }
+        }
+      } else if (BASICS[cardName]) {
+        for (var k = 0; k < benchSlots.length; k++) {
+          if (getText("poke_" + benchSlots[k]) === "Vazio") {
+            paint("slot_" + benchSlots[k], "#16a34a", "3", "6,3");
+          }
+        }
+      } else if (PRE_EVOLUTION[cardName]) {
+        var needed = PRE_EVOLUTION[cardName];
+        for (var m = 0; m < playerSlots.length; m++) {
+          var sl = playerSlots[m];
+          var borderEl = document.getElementById("new_border_" + sl);
+          var isNew = borderEl && borderEl.getAttribute("visibility") === "visible";
+          if (getText("poke_" + sl) === needed && !isNew) {
+            paint("slot_" + sl, "#16a34a", "3", "6,3");
+          }
+        }
+      } else {
+        restoreTargetHighlight();
+      }
+    }
+
+    function clearSelection() {
+      V["SEL"] = "0";
+      V["TARGET"] = "NONE";
+      clearHandHighlight();
+      clearSlotHighlights();
+    }
+
     function onHand(ev) {
       var m = /^hand_(P[12])_(\d+)$/.exec(ev.target.id || "");
       if (!m) return;
-      if (selHand) {
-        var prevIdx = parseInt(selHand.split("_")[2], 10);
-        paint(selHand, prevIdx &gt;= 8 ? "#6b7280" : "none", prevIdx &gt;= 8 ? "1" : "0");
+      var player = m[1];
+      var idx = m[2];
+      var cardName = getText("hand_text_" + player + "_" + idx);
+      if (!cardName || cardName === "-") return;
+
+      var clickedId = "hand_" + player + "_" + idx;
+      if (selHand === clickedId) {
+        V["SEL"] = "0";
+        clearHandHighlight();
+        clearSlotHighlights();
+        restoreTargetHighlight();
+        return;
       }
-      V["SEL"] = m[2];
-      selHand = "hand_" + m[1] + "_" + m[2];
-      paint(selHand, "#eadb51", "2");
+
+      clearHandHighlight();
+      V["SEL"] = idx;
+      selHand = clickedId;
+      paint(selHand, "#2563eb", "3", null);
+      highlightValidSlotsForCard(cardName, player);
     }
+
     function onSlot(name) {
-      if (selSlot) paint(selSlot, "none", "0");
+      clearSlotHighlights();
       V["TARGET"] = name;
       selSlot = "slot_" + name;
-      paint(selSlot, "#eadb51", "1.5");
+      paint(selSlot, "#2563eb", "3", null);
+
       setTimeout(function () {
         V["SEL"] = "0";
-        if (selHand) {
-          var prevIdx = parseInt(selHand.split("_")[2], 10);
-          paint(selHand, prevIdx &gt;= 8 ? "#6b7280" : "none", prevIdx &gt;= 8 ? "1" : "0");
-          selHand = null;
-        }
+        clearHandHighlight();
       }, 150);
     }
-  </script>
+
+    function onActionConsumeTarget() {
+      setTimeout(function () {
+        V["TARGET"] = "NONE";
+        clearSlotHighlights();
+      }, 150);
+    }
+
+    function onActionClear() {
+      setTimeout(function () {
+        clearSelection();
+      }, 150);
+    }
+
+    function simplifyEnergyLabel(el) {
+      if (!el) return;
+      var txt = el.textContent || "";
+      var m = /^Energias:\s*\d+\s*tipo\s*\/\s*(\d+)\s*tot$/.exec(txt.trim());
+      if (m) {
+        el.textContent = "Energias: " + m[1];
+      }
+    }
+
+    (function initEnergyObservers() {
+      for (var i = 0; i < ALL_SLOTS.length; i++) {
+        (function (el) {
+          if (!el) return;
+          simplifyEnergyLabel(el);
+          if (typeof MutationObserver !== "undefined") {
+            var obs = new MutationObserver(function () {
+              simplifyEnergyLabel(el);
+            });
+            obs.observe(el, { childList: true, characterData: true, subtree: true });
+          }
+        })(document.getElementById("energy_" + ALL_SLOTS[i]));
+      }
+    })();
+  ]]></script>
 </svg>

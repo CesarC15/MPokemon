@@ -8,6 +8,10 @@
     {
       "name": "can_replace",
       "value": "bool(phase = PLAYING & game_ended = FALSE & can_play = FALSE & ACTIVE(OPPONENT(current_turn)) /: dom(field_position) & BENCH(OPPONENT(current_turn)) /\\ dom(field_position) /= {})"
+    },
+    {
+      "name": "winner_label",
+      "value": "IF points(P1) >= 3 or (dom(field_position) /\\ PLAYER_FIELD(P2) = {}) or (current_turn = P1 & player_deck(P2) = []) THEN \"P1\" ELSIF points(P2) >= 3 or (dom(field_position) /\\ PLAYER_FIELD(P1) = {}) or (current_turn = P2 & player_deck(P1) = []) THEN \"P2\" ELSE TO_STRING(current_turn) END"
     }
   ],
   "items": [
@@ -25,6 +29,36 @@
       "id": "txt_can_play",
       "attr": "text",
       "value": "IF can_play = TRUE THEN \"Pode jogar: True\" ELSE \"Pode jogar: False\" END"
+    },
+    {
+      "id": "txt_game_status",
+      "attr": "text",
+      "value": "IF game_ended = TRUE THEN \"FIM DE JOGO! Vencedor: \"^winner_label ELSE \"Partida em andamento\" END"
+    },
+    {
+      "id": "txt_game_status",
+      "attr": "fill",
+      "value": "IF game_ended = TRUE THEN \"#b45309\" ELSE \"#15803d\" END"
+    },
+    {
+      "id": "banner_game_over",
+      "attr": "visibility",
+      "value": "IF game_ended = TRUE THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "id": "txt_game_over_title",
+      "attr": "visibility",
+      "value": "IF game_ended = TRUE THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "id": "txt_game_over_winner",
+      "attr": "visibility",
+      "value": "IF game_ended = TRUE THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "id": "txt_game_over_winner",
+      "attr": "text",
+      "value": "\"Vencedor: \"^winner_label^\" (Pontos: P1 \"^TO_STRING(points(P1))^\" x \"^TO_STRING(points(P2))^\" P2)\""
     },
     {
       "id": "txt_points_P1",
@@ -84,6 +118,15 @@
     {
       "repeat": [
         "ACTIVE_P1",
+        "ACTIVE_P2"
+      ],
+      "id": "slot_%0",
+      "attr": "fill",
+      "value": "IF %0 : dom(field_position) THEN (IF POKEMON_TYPE(field_position(%0)) = FIRE THEN \"#fca5a5\" ELSIF POKEMON_TYPE(field_position(%0)) = WATER THEN \"#93c5fd\" ELSIF POKEMON_TYPE(field_position(%0)) = GRASS THEN \"#86efac\" ELSIF POKEMON_TYPE(field_position(%0)) = ELECTRIC THEN \"#fde047\" ELSIF POKEMON_TYPE(field_position(%0)) = COLORLESS THEN \"#e5e7eb\" ELSE \"#f3f4f6\" END) ELSE \"#d1d5db\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
         "BENCH1_P1",
         "BENCH2_P1",
         "BENCH3_P1",
@@ -92,9 +135,39 @@
         "BENCH2_P2",
         "BENCH3_P2"
       ],
-      "id": "slot_%0",
-      "attr": "fill",
-      "value": "IF %0 : dom(field_position) THEN (IF POKEMON_TYPE(field_position(%0)) = FIRE THEN \"#fca5a5\" ELSIF POKEMON_TYPE(field_position(%0)) = WATER THEN \"#93c5fd\" ELSIF POKEMON_TYPE(field_position(%0)) = GRASS THEN \"#86efac\" ELSIF POKEMON_TYPE(field_position(%0)) = ELECTRIC THEN \"#fde047\" ELSE \"#f3f4f6\" END) ELSE \"#9ca3af\" END"
+      "id": "new_border_%0",
+      "attr": "visibility",
+      "value": "IF %0 : dom(field_position) & newly_placed(%0) = TRUE THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "new_badge_%0",
+      "attr": "visibility",
+      "value": "IF %0 : dom(field_position) & newly_placed(%0) = TRUE THEN \"visible\" ELSE \"hidden\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "new_text_%0",
+      "attr": "visibility",
+      "value": "IF %0 : dom(field_position) & newly_placed(%0) = TRUE THEN \"visible\" ELSE \"hidden\" END"
     },
     {
       "repeat": [
@@ -137,9 +210,39 @@
         "BENCH2_P2",
         "BENCH3_P2"
       ],
+      "id": "stats_%0",
+      "attr": "text",
+      "value": "IF %0 : dom(field_position) THEN \"Dano: \"^TO_STRING(DAMAGE(field_position(%0)))^\" | Atq: \"^TO_STRING(ATTACK_COST(field_position(%0)))^\" | Rec: \"^TO_STRING(RETREAT_COST(field_position(%0))) ELSE \"Dano: - | Atq: - | Rec: -\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
+      "id": "weak_%0",
+      "attr": "text",
+      "value": "IF %0 : dom(field_position) THEN \"Fraq: \"^(IF POKEMON_TYPE(field_position(%0)) : dom(WEAKNESS) THEN TO_STRING(WEAKNESS(POKEMON_TYPE(field_position(%0))))^\" (2x)\" ELSE \"Nenhuma\" END) ELSE \"Fraq: -\" END"
+    },
+    {
+      "repeat": [
+        "ACTIVE_P1",
+        "BENCH1_P1",
+        "BENCH2_P1",
+        "BENCH3_P1",
+        "ACTIVE_P2",
+        "BENCH1_P2",
+        "BENCH2_P2",
+        "BENCH3_P2"
+      ],
       "id": "energy_%0",
       "attr": "text",
-      "value": "\"Energias: \"^TO_STRING(size(energy_map(%0)))"
+      "value": "IF %0 : dom(field_position) THEN \"Energias: \"^TO_STRING(card(energy_map(%0) |> {POKEMON_TYPE(field_position(%0))}))^\" tipo / \"^TO_STRING(size(energy_map(%0)))^\" tot\" ELSE \"Energias: 0\" END"
     },
     {
       "repeat": [
@@ -232,7 +335,7 @@
       },
       "id": "hand_P1_%0",
       "attr": "fill",
-      "value": "IF %0 <= size(player_hand(P1)) THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+      "value": "IF %0 <= size(player_hand(P1)) THEN (IF player_hand(P1)(%0) : POKEMON THEN \"#dbeafe\" ELSIF player_hand(P1)(%0) : ENERGY THEN \"#fef3c7\" ELSIF player_hand(P1)(%0) : SUPPORTER THEN \"#dcfce7\" ELSE \"#d1d5db\" END) ELSE \"#e5e7eb\" END"
     },
     {
       "for": {
@@ -268,7 +371,7 @@
       },
       "id": "hand_P2_%0",
       "attr": "fill",
-      "value": "IF %0 <= size(player_hand(P2)) THEN \"#d1d5db\" ELSE \"#9ca3af\" END"
+      "value": "IF %0 <= size(player_hand(P2)) THEN (IF player_hand(P2)(%0) : POKEMON THEN \"#dbeafe\" ELSIF player_hand(P2)(%0) : ENERGY THEN \"#fef3c7\" ELSIF player_hand(P2)(%0) : SUPPORTER THEN \"#dcfce7\" ELSE \"#d1d5db\" END) ELSE \"#e5e7eb\" END"
     },
     {
       "for": {
@@ -315,7 +418,10 @@
       },
       "id": "hand_P1_%0",
       "event": "place_active",
-      "predicates": ["pp = P1", "ii = %0"]
+      "predicates": [
+        "pp = P1",
+        "ii = %0"
+      ]
     },
     {
       "for": {
@@ -324,7 +430,10 @@
       },
       "id": "hand_P2_%0",
       "event": "place_active",
-      "predicates": ["pp = P2", "ii = %0"]
+      "predicates": [
+        "pp = P2",
+        "ii = %0"
+      ]
     },
     {
       "for": {
@@ -333,7 +442,10 @@
       },
       "id": "btn_deck%0_p1",
       "event": "set_deck",
-      "predicates": ["pp = P1", "dd = DECK%0"],
+      "predicates": [
+        "pp = P1",
+        "dd = DECK%0"
+      ],
       "items": [
         {
           "attr": "fill",
@@ -355,7 +467,10 @@
       },
       "id": "btn_deck%0_p2",
       "event": "set_deck",
-      "predicates": ["pp = P2", "dd = DECK%0"],
+      "predicates": [
+        "pp = P2",
+        "dd = DECK%0"
+      ],
       "items": [
         {
           "attr": "fill",
@@ -424,12 +539,16 @@
     {
       "id": "btn_retreat",
       "event": "retreat",
-      "predicates": ["TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"]
+      "predicates": [
+        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
+      ]
     },
     {
       "id": "btn_replace",
       "event": "replace_active",
-      "predicates": ["TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"]
+      "predicates": [
+        "TO_STRING(ff) = VISB_CLICK_META_INFOS'jsVars(\"TARGET\")"
+      ]
     },
     {
       "id": "btn_end_turn",
@@ -451,10 +570,13 @@
     {
       "id": "btn_victory",
       "event": "victory",
+      "predicates": [
+        "pp = current_turn"
+      ],
       "items": [
         {
           "attr": "fill",
-          "enabled": "\"#d1d5db\"",
+          "enabled": "\"#fbbf24\"",
           "disabled": "\"#9ca3af\""
         },
         {

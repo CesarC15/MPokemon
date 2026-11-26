@@ -162,7 +162,7 @@ INVARIANT
     & can_play : BOOL
     & game_ended : BOOL
     & phase : PHASES
-    & game_ended = FALSE //Achar contra exemplo automaticamente no ProB, tirar depois
+    //& game_ended = FALSE Achar contra exemplo automaticamente no ProB, tirar depois
     & dom(curr_health) = dom(field_position)
     & ! ff . (ff : dom(curr_health) => curr_health(ff) <= (field_position ; MAX_HEALTH)(ff)) // Para cada posição que tá no campo, a vida daquela posição é menor igual a vida máxima do pokémon de lá
     & ! ff . (ff : (FIELD - dom(field_position)) => newly_placed(ff) = FALSE) // Para cada posição, se não tem pokémon, newly_placed daquela posição é FALSE
